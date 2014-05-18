@@ -162,6 +162,7 @@
 				070068EC1921DAA200E40EAD /* Sources */,
 				070068ED1921DAA200E40EAD /* Frameworks */,
 				070068EE1921DAA200E40EAD /* Resources */,
+				07114B4D192906800079D1C7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -243,6 +244,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07114B4D192906800079D1C7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		070068EC1921DAA200E40EAD /* Sources */ = {
@@ -456,6 +473,7 @@
 				070069241921DAA200E40EAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		070069251921DAA200E40EAD /* Build configuration list for PBXNativeTarget "hellowChu2Tests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +482,7 @@
 				070069271921DAA200E40EAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
